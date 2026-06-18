@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hyeyum — Aeroshoot</title>
+<meta name="description" content="Hyeyum is an independent game studio. Aeroshoot is a casual puzzle game about pushing colored arrows along open paths to clear the maze." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #15171e;
+    --bg-soft: #1c1f29;
+    --ink: #f3f1ea;
+    --muted: #9aa0ad;
+    --line: #2a2e3a;
+    --up: #ff5a5f;
+    --right: #2dd4bf;
+    --down: #fbbf24;
+    --left: #a78bfa;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    font-size: 15px;
+  }
+
+  .dot {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--right);
+    display: inline-block;
+  }
+
+  .brand-kr { color: var(--muted); font-weight: 500; }
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 56px 0;
+  }
+
+  .eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(48px, 12vw, 96px);
+    line-height: 0.95;
+    margin: 0 0 24px;
+    letter-spacing: -0.02em;
+  }
+
+  .tagline {
+    font-size: clamp(18px, 3.5vw, 22px);
+    max-width: 30ch;
+    color: var(--ink);
+    margin: 0 0 40px;
+  }
+
+  /* signature: arrow grid (the maze) */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    max-width: 280px;
+    margin-top: 8px;
+  }
+
+  .cell {
+    aspect-ratio: 1;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--bg-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cell svg { width: 44%; height: 44%; display: block; }
+  .u { color: var(--up); }
+  .r { color: var(--right); }
+  .d { color: var(--down); }
+  .l { color: var(--left); }
+  .empty { background: transparent; border-style: dashed; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .grid .cell { animation: fadeUp 0.5s ease both; }
+  .grid .cell:nth-child(1){animation-delay:.02s}
+  .grid .cell:nth-child(2){animation-delay:.05s}
+  .grid .cell:nth-child(3){animation-delay:.08s}
+  .grid .cell:nth-child(4){animation-delay:.11s}
+  .grid .cell:nth-child(5){animation-delay:.14s}
+  .grid .cell:nth-child(6){animation-delay:.17s}
+  .grid .cell:nth-child(7){animation-delay:.20s}
+  .grid .cell:nth-child(8){animation-delay:.23s}
+  .grid .cell:nth-child(9){animation-delay:.26s}
+  .grid .cell:nth-child(10){animation-delay:.29s}
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding-top: 22px;
+    font-size: 14px;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    justify-content: space-between;
+  }
+
+  footer strong { color: var(--ink); font-weight: 500; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .grid .cell { animation: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="dot"></span>
+      HYEYUM <span class="brand-kr">혜윰</span>
+    </header>
+
+    <main>
+      <p class="eyebrow">Casual Puzzle</p>
+      <h1>Aeroshoot</h1>
+      <p class="tagline">Push colored arrows along open paths and clear the maze — one clean sweep at a time.</p>
+
+      <div class="grid" aria-hidden="true">
+        <div class="cell u"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></div>
+        <div class="cell r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        <div class="cell empty"></div>
+        <div class="cell l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></div>
+        <div class="cell d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></div>
+        <div class="cell r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        <div class="cell empty"></div>
+        <div class="cell d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></div>
+        <div class="cell u"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></div>
+        <div class="cell l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></div>
+      </div>
+    </main>
+
+    <footer>
+      <span>An independent game studio.</span>
+      <span>© 2026 <strong>Hyeyum (혜윰)</strong></span>
+    </footer>
+  </div>
+</body>
+</html>
