@@ -1,0 +1,9 @@
+Freesentation (프리젠테이션)
+Copyright (c) 2024 PT& (피티앤). Freesentation is a trademark of Lee Juim.
+Designed by Lee Juim. Latin glyphs from Roboto by Christian Robertson;
+Hangul glyphs from Noto Sans CJK (Source Han Sans) by Jang Soo-young and Kang Joo-yeon, Sandoll Communications.
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+The full license text and FAQ: https://openfontlicense.org (https://scripts.sil.org/OFL)
+
+This site embeds a subset of the font (only the characters used on the page), inlined as WOFF2.
